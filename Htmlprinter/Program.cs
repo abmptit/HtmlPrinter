@@ -14,8 +14,22 @@ namespace Htmlprinter
             Console.WriteLine("Hello World!");
 
             var listAbonnements = new List<Abonnement>();
-            listAbonnements.Add(new Abonnement() { Libelle = "Test 1", Adresse = "20 rue des orchidées" } );
-            listAbonnements.Add(new Abonnement() { Libelle = "Test 2", Adresse = "10 rue des wechwech" } );
+            var abonnement = new Abonnement();
+            
+            listAbonnements.Add(new Abonnement());
+            listAbonnements.Add(new Abonnement());
+            listAbonnements.Add(new Abonnement());
+            listAbonnements.Add(new Abonnement());
+            listAbonnements.Add(new Abonnement());
+            listAbonnements.Add(new Abonnement());
+            listAbonnements.Add(new Abonnement());
+            listAbonnements.Add(new Abonnement());
+            listAbonnements.Add(new Abonnement());
+            listAbonnements.Add(new Abonnement());
+            listAbonnements.Add(new Abonnement());
+            listAbonnements.Add(new Abonnement());
+            listAbonnements.Add(new Abonnement());
+            listAbonnements.Add(new Abonnement());
 
             var renderer = Render.FileToString(Path.Combine(".", "LeaderTemplate.html"), new
             {
@@ -25,7 +39,7 @@ namespace Htmlprinter
             //var htmlContent = File.ReadAllText(Path.Combine(".", "LeaderTemplate.html"));
 
             var reportPdfFileInfo = new FileInfo(Path.Combine(".", "LeaderTemplate.pdf"));
-            var pdfContent = Pdf.From(renderer).Portrait().Content();
+            var pdfContent = Pdf.From(renderer).OfSize(PaperSize.A4Rotated).Content();
             File.WriteAllBytes(reportPdfFileInfo.FullName, pdfContent);
 
             var p = new Process();
@@ -39,7 +53,21 @@ namespace Htmlprinter
 
     public class Abonnement
     {
-        public string Libelle { get; set; }
-        public string Adresse { get; set; }
+        public Abonnement()
+        {
+            Image = "leader-log.jpg";
+            Nom = "Ben Azzouna";
+            Prenom = "Zied";
+            NomProduit = "Abonnement annuelle";
+            DateExpiration = "06-11-2020";
+            Prix = "360 DT";
+        }
+
+        public string Image { get; set; }
+        public string Nom { get; set; }
+        public string Prenom { get; set; }
+        public string NomProduit { get; set; }
+        public string DateExpiration { get; set; }
+        public string Prix { get; set; }
     }
 }

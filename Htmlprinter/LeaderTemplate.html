@@ -49,24 +49,15 @@
 </head>
 <body>
     <table class="table table-sm table-hover col-md-8 dataTable no-footer cards" id="tblSessions" style="width: 100%;" role="grid" aria-describedby="tblSessions_info">
-        <thead>
-            <tr role="row"><th class="sorting" tabindex="0" aria-controls="tblSessions" rowspan="1" colspan="1" aria-label="Date de début: activer pour trier par ordre ascendant" style="width: 171px;">Date de début</th><th class="sorting" tabindex="0" aria-controls="tblSessions" rowspan="1" colspan="1" aria-label="Date de fin: activer pour trier par ordre ascendant" style="width: 136px;">Date de fin</th><th class="sorting" tabindex="0" aria-controls="tblSessions" rowspan="1" colspan="1" aria-label="Libellé: activer pour trier par ordre ascendant" style="width: 201px;">Libellé</th><th class="sorting" tabindex="0" aria-controls="tblSessions" rowspan="1" colspan="1" aria-label="Entreprise: activer pour trier par ordre ascendant" style="width: 330px;">Entreprise</th><th class="sorting" tabindex="0" aria-controls="tblSessions" rowspan="1" colspan="1" aria-label="Statut: activer pour trier par ordre ascendant" style="width: 84px;">Statut</th><th class="sorting" tabindex="0" aria-controls="tblSessions" rowspan="1" colspan="1" aria-label="Taux de progression: activer pour trier par ordre ascendant" style="width: 235px;">Taux de progression</th><th class="sorting" tabindex="0" aria-controls="tblSessions" rowspan="1" colspan="1" aria-label="Actions: activer pour trier par ordre ascendant" style="width: 101px;">Actions</th></tr>
-        </thead>
         <tbody>
             {{#Abonnements}}
-            <tr role="row" class="odd" style="height: 343px;">
-                <td data-label="Date de début">06-11-2020</td>
-                <td data-label="Date de fin">Non définie</td>
-                <td data-label="Libellé">{{Libelle}}</td>
-                <td data-label="Entreprise">{{Adresse}}</td>
-                <td data-label="Statut"><span class="badge badge-secondary">Nouvelle</span></td>
-                <td data-label="Taux de progression">
-                    <div class="progress progress-sm">
-                        <div class="progress-bar bg-green" role="progressbar" aria-volumenow="0" aria-volumemin="0" aria-volumemax="100" style="width: 0%"></div>
-                    </div><small>0% Complété</small>
-                </td>
-                <td data-label="Actions"><a href="/SessionAccomps/Delete/2" class="fas fa-trash"></a><a href="/SessionAccomps/Details/2" class="btn"><i class="fas fa-eye"></i></a></td>
-
+            <tr role="row" class="even" style="height: 300px;">
+                <td data-label="Image"><imag src="{{Image}}"></td>
+                <td data-label="Nom">{{Nom}}</td>
+                <td data-label="Prénom">{{Prenom}}</td>
+                <td data-label="Nom Produit">{{NomProduit}}</td>
+                <td data-label="Expiré le">{{DateExpiration}}</td>
+                <td data-label="Prix"><span class="badge badge-secondary">{{Prix}}</span></td>
             </tr>
             {{/Abonnements}}
         </tbody>
