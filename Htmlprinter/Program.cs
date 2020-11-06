@@ -36,7 +36,7 @@ namespace Htmlprinter
                 Abonnements = listAbonnements
             });
 
-            //var htmlContent = File.ReadAllText(Path.Combine(".", "LeaderTemplate.html"));
+            File.WriteAllText(Path.Combine(".", "Etiquette.html"), renderer);
 
             var reportPdfFileInfo = new FileInfo(Path.Combine(".", "LeaderTemplate.pdf"));
             var pdfContent = Pdf.From(renderer).OfSize(PaperSize.A4Rotated).Content();
